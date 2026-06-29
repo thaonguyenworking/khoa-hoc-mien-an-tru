@@ -212,7 +212,7 @@
 
         .slides-container {
             display: flex;
-            width: 400%; /* 6 Pages/Slides tương ứng 6 mục menu */
+            width: 400%; /* 4 Pages/Slides */
             height: 100%;
             transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
         }
@@ -220,9 +220,10 @@
         .slide {
             width: 100%;
             height: 100%; /* Giữ nguyên chiều cao màn hình cố định cho slide */
-            flex: 0 0 16.666%; /* Chia đều mỗi slide chiếm 1/6 độ rộng container */
+            flex: 0 0 25%;
             padding: 60px 80px 80px 80px;
             display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 60px;
             overflow-y: auto; /* Kích hoạt thanh cuộn nội bộ nếu chữ quá dài */
             position: relative; /* Giúp nội dung căn giữa theo chiều dọc tự nhiên */
@@ -1191,7 +1192,7 @@
                         </div>
                     </div>
                 </div>
-            </section>
+
                 <!-- SLIDE 2: CHÂN DUNG NGƯỜI ĐỒNG HÀNH -->
                 <div class="slide" style="grid-template-columns: 1fr;">
                     <!-- Column 1: Người Đồng Hành -->
@@ -1239,7 +1240,7 @@
                         </div>
                     </div>
                 </div>
-            </section>
+
                 <!-- SLIDE 3: ĐĂNG KÝ THAM GIA & KẾT NỐI VỚI NGƯỜI ĐỒNG HÀNH -->
                 <div class="slide">
                     <!-- Column 1: Đăng ký tham gia -->
@@ -1278,7 +1279,7 @@
                             </div>
                         </div>
                     </div>
-                </section>
+
                     <!-- Column 2: Kết nối tới người đồng hành -->
                     <div class="slide-col" id="faq">
                         <div class="card" style="display: flex; flex-direction: column; height: 100%; justify-content: space-between;">
