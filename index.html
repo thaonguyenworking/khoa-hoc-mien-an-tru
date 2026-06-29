@@ -1475,61 +1475,6 @@
                 btn.textContent = 'Thu gọn Lời Ngỏ';
             }
         }
-    </script>
-  // JS điều hướng slide mượt mà cho 6 mục tương ứng 6 Slide
-        const container = document.querySelector('.slides-container');
-        const tocItems = document.querySelectorAll('.toc-item');
-        const btnPrev = document.getElementById('btnPrev');
-        const btnNext = document.getElementById('btnNext');
-        
-        let currentSlide = 0;
-        const totalSlides = 6; // Đã cập nhật thành 6 slide
-
-        function updateSlidePosition() {
-            // Dịch chuyển container theo tỷ lệ chuẩn 16.666% mỗi slide
-            container.style.transform = `translateX(-${currentSlide * (100 / totalSlides)}%)`;
-            
-            // Cập nhật trạng thái active trên Menu Sidebar
-            tocItems.forEach((item, index) => {
-                if (index === currentSlide) {
-                    item.classList.add('active');
-                } else {
-                    item.classList.remove('active');
-                }
-            });
-
-            // Ẩn/Hiện nút mũi tên
-            btnPrev.disabled = currentSlide === 0;
-            btnNext.disabled = currentSlide === totalSlides - 1;
-        }
-
-        // Lắng nghe sự kiện click trực tiếp trên Menu dọc bên trái
-        tocItems.forEach((item, index) => {
-            const btn = item.querySelector('button');
-            if (btn) {
-                btn.addEventListener('click', () => {
-                    currentSlide = index;
-                    updateSlidePosition();
-                });
-            }
-        });
-
-        // Lắng nghe sự kiện nút mũi tên Trái / Phải
-        if (btnPrev && btnNext) {
-            btnPrev.addEventListener('click', () => {
-                if (currentSlide > 0) {
-                    currentSlide--;
-                    updateSlidePosition();
-                }
-            });
-
-            btnNext.addEventListener('click', () => {
-                if (currentSlide < totalSlides - 1) {
-                    currentSlide++;
-                    updateSlidePosition();
-                }
-            });
-        }
-    </script>
+    </script>    
 </body>
 </html>
